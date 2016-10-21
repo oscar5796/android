@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        tools:context="com.example.oscarsantisteban.exercises.HOME">
+
+        <Button
+            android:text="Ejercicio 1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ex_1_btn" />
+
+        <Button
+            android:text="Ejercicio 2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ex_2_btn" />
+
+        <Button
+            android:text="Ejercicio 3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ex_3_btn" />
+
+    <Button
+        android:text="Ejercicio 4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ex_4_btn" />
+
+</LinearLayout>
