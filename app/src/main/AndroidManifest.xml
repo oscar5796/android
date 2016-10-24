@@ -20,7 +20,8 @@
         <activity android:name=".Exercise3" />
         <activity android:name=".Exercise4" />
         <activity android:name=".ActivityProcesar" />
-        <activity android:name=".Exercise2Result"></activity>
+        <activity android:name=".Exercise2Result" />
+        <activity android:name=".ActivityProcesarNumeros"></activity>
     </application>
 
 </manifest>
