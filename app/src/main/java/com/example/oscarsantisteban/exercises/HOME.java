@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HOME extends AppCompatActivity {
@@ -14,7 +15,8 @@ public class HOME extends AppCompatActivity {
     Button btnEx2;
     Button btnEx3;
     Button btnEx4;
-
+    TextView ex3Result;
+    int result;
 
 
     @Override
@@ -25,6 +27,7 @@ public class HOME extends AppCompatActivity {
         btnEx2 = (Button) findViewById(R.id.ex_2_btn);
         btnEx3 = (Button) findViewById(R.id.ex_3_btn);
         btnEx4 = (Button) findViewById(R.id.ex_4_btn);
+        ex3Result = (TextView) findViewById(R.id.ex3_result);
 
         btnEx1.setOnClickListener(btnExClickListener(1));
         btnEx2.setOnClickListener(btnExClickListener(2));
@@ -70,14 +73,13 @@ public class HOME extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
+        if (requestCode == 1){
             if(resultCode == Activity.RESULT_OK){
-                String result=data.getStringExtra("result");
-                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                result = data.getIntExtra("result", 0);
+                ex3Result.setText(String.valueOf(result));
             }
-            if (resultCode == Activity.RESULT_CANCELED) {
-                Toast.makeText(getApplicationContext(), "There's nothing to show", Toast.LENGTH_LONG).show();
+            if(resultCode == Activity.RESULT_CANCELED){
+                Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
             }
         }
     }

@@ -27,6 +27,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/ex_3_btn" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ex3_result"
+            />
 
     <Button
         android:text="Ejercicio 4"

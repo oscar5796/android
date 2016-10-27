@@ -34,6 +34,8 @@ public class ActivityProcesarNumeros extends AppCompatActivity {
 
         stringResult.setText("El resultado es: "+result);
 
+        Toast.makeText(this, Activity.RESULT_OK, Toast.LENGTH_LONG).show();
+
         btnHome.setOnClickListener(onBtnHomeClick());
 
     }
@@ -42,16 +44,23 @@ public class ActivityProcesarNumeros extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),HOME.class);
-                startActivity(intent);
-
                 Intent returnIntent = new Intent();
                 returnIntent.putExtra("result",result);
                 setResult(Activity.RESULT_OK,returnIntent);
                 finish();
+
+  //              ActivityProcesarNumeros.this.finish();
             }
         };
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("result",result);
+        setResult(Activity.RESULT_OK,returnIntent);
+        setResult(1,returnIntent);
+        finish();
+//        this.finish();
+    }
 }
