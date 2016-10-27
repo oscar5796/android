@@ -17,6 +17,7 @@ public class ActivityProcesarNumeros extends AppCompatActivity {
     int result;
     int numberOne;
     int numberTwo;
+    public static final int BACK_BUTTON_RESPONSE = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class ActivityProcesarNumeros extends AppCompatActivity {
 
         stringResult.setText("El resultado es: "+result);
 
-        Toast.makeText(this, Activity.RESULT_OK, Toast.LENGTH_LONG).show();
+     //   Toast.makeText(this, String.valueOf(Activity.RESULT_OK), Toast.LENGTH_LONG).show();
 
         btnHome.setOnClickListener(onBtnHomeClick());
 
@@ -58,8 +59,7 @@ public class ActivityProcesarNumeros extends AppCompatActivity {
     public void onBackPressed() {
         Intent returnIntent = new Intent();
         returnIntent.putExtra("result",result);
-        setResult(Activity.RESULT_OK,returnIntent);
-        setResult(1,returnIntent);
+        setResult(BACK_BUTTON_RESPONSE,returnIntent);
         finish();
 //        this.finish();
     }

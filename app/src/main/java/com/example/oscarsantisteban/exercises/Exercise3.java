@@ -16,7 +16,7 @@ public class Exercise3 extends AppCompatActivity {
     TextView resultProcess;
     Button process;
     int result;
-    public final int REQUEST_CODE_ONE = 1;
+    public static final int REQUEST_CODE_ONE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +57,21 @@ public class Exercise3 extends AppCompatActivity {
         if (requestCode == REQUEST_CODE_ONE) {
             if(resultCode == Activity.RESULT_OK){
 
+                result = data.getIntExtra("result", 0);
                 Intent returnIntent = new Intent();
                 returnIntent.putExtra("result",result);
                 setResult(Activity.RESULT_OK,returnIntent);
-                this.finish();
+                finish();
 
             }
+            if(resultCode == ActivityProcesarNumeros.BACK_BUTTON_RESPONSE){
 
+                result = data.getIntExtra("result", 0);
+                resultProcess.setText(String.valueOf(result));
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("result",result);
+                setResult(Activity.RESULT_OK, returnIntent);
+            }
             if (resultCode == Activity.RESULT_CANCELED) {
                 Toast.makeText(getApplicationContext(),"Something went wrong",Toast.LENGTH_LONG).show();
             }
